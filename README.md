@@ -12,7 +12,8 @@ The reason of using IMU and wheel encoder is that low cost OFS sensors create da
 
 The two optical flow sensors (OFS) are indicated by points \( L \) and \( R \) in the schematic shown in Figure 1\. The point \( O \), which is the mid-point of \( L \) and \( R \), is designated as the center of the robot. Let the readings from the two sensors at \( L \) and \( R \) in the current step be (Δx_L, Δy_L)  and (Δx_R, Δy_R) . These are indicated in Figure by arrows shown in blue.
 
-% upload optical_low image in center here 
+![image](https://github.com/user-attachments/assets/349a99a6-9983-45b1-a219-1bbea3919723)
+
 
 Let the local coordinate system (LCS) of the robot be centered at the point \( O \). The displacement (Δx, Δy)  of the point \( O \) in the LCS is simply the average of individual components.
 
