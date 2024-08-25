@@ -36,8 +36,15 @@ Our choice of IMU was ISM330DHCX which has an inbuilt accelerometer, gyroscope a
 ### Caliberation of IMU
 IMU requires some calibration as there might be some error due to misalignment of axes (orthogonality error) or some gibberish reading when the IMU is not moving ( zero error ). To remove such errors from the accelerometer and magnetometer, we have plotted alan-deviation plots of the values and calculated correction matrix and biases using Magneto software. Here is the picture of the plots.
 
-<p align="center"> [magneto_calib](https://github.com/user-attachments/assets/ff57cb6f-e66d-4eb5-bb3b-0b57cf741f1a) ![Plot_3D](https://github.com/user-attachments/assets/18d404e4-b5ac-4399-aa04-4e916c2077d7) </p>
+<p align="center"> ![magneto_calib](https://github.com/user-attachments/assets/ff57cb6f-e66d-4eb5-bb3b-0b57cf741f1a)  ![Plot_3D](https://github.com/user-attachments/assets/18d404e4-b5ac-4399-aa04-4e916c2077d7) </p>
 
+### Calculations
+a simple double integration of linear acceleration will give results with a lot of drift error and values tend to blow up very quickly, to calculate the position and orientation of bot, we have tried to implement a Cubature Kalman Filter (CKF) (a type of Kalman filter with better capability to model nonlinearity and less computation cost).
+
+### Kalman Filter
+Kalman filter a state space model used to reduce the effect of noise on readings and estimate the state as close to ground truth. Here the state is [x, y, z, ˙x, ˙y, ˙z, θx, θy, θz ] to be calculated from readings of [¨x, ¨y, ¨z, ˙θx, ˙θy, ˙θz ], Here is the schematic version of kalman filter- 
+
+<p align="center">  ![kalman-schematic](https://github.com/user-attachments/assets/7874e0d4-4339-4a1a-8b73-076d00ce0872) </p>
 
 
 
@@ -47,9 +54,9 @@ Here is the design of our PCB which accomodates all the electrical connections i
 
 
 
-Sensors kaun kaunse use kiye and how they function
-PCB 
 
-How to run code, in order to ensure robot to run, power up arduino and load the file getting data and RPI with main file 
+
+# How to run code
+In order to ensure robot to run, power up arduino and Raspberry Pi using battery and load the file- "Getting_data_in_SI_imu_multi.ino" in arduino and file "main.py" in Raspberry Pi.
 
 
