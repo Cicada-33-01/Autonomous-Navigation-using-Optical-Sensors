@@ -36,7 +36,7 @@ Our choice of IMU was ISM330DHCX which has an inbuilt accelerometer, gyroscope a
 ### Caliberation of IMU
 IMU requires some calibration as there might be some error due to misalignment of axes (orthogonality error) or some gibberish reading when the IMU is not moving ( zero error ). To remove such errors from the accelerometer and magnetometer, we have plotted alan-deviation plots of the values and calculated correction matrix and biases using Magneto software. Here is the picture of the plots.
 
-<p align="center"> ![magneto_calib](https://github.com/user-attachments/assets/ff57cb6f-e66d-4eb5-bb3b-0b57cf741f1a) ![Plot_3D](https://github.com/user-attachments/assets/18d404e4-b5ac-4399-aa04-4e916c2077d7) </p>
+<p align="center"> [magneto_calib](https://github.com/user-attachments/assets/ff57cb6f-e66d-4eb5-bb3b-0b57cf741f1a) ![Plot_3D](https://github.com/user-attachments/assets/18d404e4-b5ac-4399-aa04-4e916c2077d7) </p>
 
 
 
