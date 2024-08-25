@@ -12,8 +12,9 @@ The reason of using IMU and wheel encoder is that low cost OFS sensors create da
 
 The two optical flow sensors (OFS) are indicated by points ( L \ and ( R ) in the schematic shown in Figure 1\. The point ( O ), which is the mid-point of ( L ) and ( R ), is designated as the center of the robot. Let the readings from the two sensors at ( L ) and ( R ) in the current step be (Δx<sub>L</sub>, Δy<sub>L</sub>)  and (Δx<sub>R</sub>, Δy<sub>R</sub> . These are indicated in Figure by arrows shown in blue.
 
- ![image](assets/optical_flow.png)
-                            
+<p align="center">
+<img width = "300" height = "209" ![image](assets/optical_flow.png) >
+</p>                            
 
 Let the local coordinate system (LCS) of the robot be centered at the point ( O ). The displacement (Δx, Δy)  of the point ( O ) in the LCS is simply the average of individual components.
 
@@ -36,7 +37,9 @@ Our choice of IMU was ISM330DHCX which has an inbuilt accelerometer, gyroscope a
 ### Caliberation of IMU
 IMU requires some calibration as there might be some error due to misalignment of axes (orthogonality error) or some gibberish reading when the IMU is not moving ( zero error ). To remove such errors from the accelerometer and magnetometer, we have plotted alan-deviation plots of the values and calculated correction matrix and biases using Magneto software. Here is the picture of the plots.
 
-![magneto_calib](https://github.com/user-attachments/assets/ff57cb6f-e66d-4eb5-bb3b-0b57cf741f1a)  ![Plot_3D](https://github.com/user-attachments/assets/18d404e4-b5ac-4399-aa04-4e916c2077d7) 
+![magneto_calib](https://github.com/user-attachments/assets/ff57cb6f-e66d-4eb5-bb3b-0b57cf741f1a) 
+
+![Plot_3D](https://github.com/user-attachments/assets/18d404e4-b5ac-4399-aa04-4e916c2077d7) 
 
 ### Calculations
 a simple double integration of linear acceleration will give results with a lot of drift error and values tend to blow up very quickly, to calculate the position and orientation of bot, we have tried to implement a Cubature Kalman Filter (CKF) (a type of Kalman filter with better capability to model nonlinearity and less computation cost).
