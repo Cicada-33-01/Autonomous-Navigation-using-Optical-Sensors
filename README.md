@@ -23,7 +23,7 @@ In order to compute \( Δθ), we note that the new positions of \( L \) and \( R
 
 
 
-
+( Δx<sub>i</sub>,  Δy<sub>i</sub>, Δθ=<sub>i</sub>)
 
 
 Sensors kaun kaunse use kiye and how they function
