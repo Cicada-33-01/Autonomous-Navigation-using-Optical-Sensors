@@ -30,6 +30,21 @@ Let the position of the robot at step \( i \) be denoted by \( (x<sub>i</sub>, y
 <p align="center"> θ<sub>i+1</sub> = θ<sub>i</sub>+ Δθ<sub>i</sub> </p>
 
 
+## IMU 
+Our choice of IMU was ISM330DHCX which has an inbuilt accelerometer, gyroscope and magnetometer. The reason behind choosing this sensor was that high signal to noise ratio and availability of adequate libraries and options for customisation. The accelerometer gives acceleration in linear axes (X-Y-Z), the gyroscope gives angular velocities about X-Y-Z axes and magnetometer gives value of earth’s magnetic field in those axes.
+
+### Caliberation of IMU
+IMU requires some calibration as there might be some error due to misalignment of axes (orthogonality error) or some gibberish reading when the IMU is not moving ( zero error ). To remove such errors from the accelerometer and magnetometer, we have plotted alan-deviation plots of the values and calculated correction matrix and biases using Magneto software. Here is the picture of the plots.
+
+<p align="center"> ![magneto_calib](https://github.com/user-attachments/assets/ff57cb6f-e66d-4eb5-bb3b-0b57cf741f1a) ![Plot_3D](https://github.com/user-attachments/assets/18d404e4-b5ac-4399-aa04-4e916c2077d7) </p>
+
+
+
+
+## Printed Circuit Board
+Here is the design of our PCB which accomodates all the electrical connections including arduino, IMU, motor driver and motor
+<p align="center"> ![PCBDesign](https://github.com/user-attachments/assets/600325bf-d160-4d07-abf2-c7197590886d) </p>
+
 
 
 Sensors kaun kaunse use kiye and how they function
